@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Articles</h1>
-
+<%= cl_image_tag("https://res.cloudinary.com/dxoxe2z2l/image/upload/w_200,h_200,c_limit,e_blur:400,o_90,b_black/l_text:arial_80:®,ar_1:1,c_lfill,o_60,co_rgb:ffffff,b_rgb:000000,r_max/v1591388239/Photo_on_05-06-2020_at_22.16_ars6c1.jpg",
+                 :transformation => {
+                   :width => 300, :height => 200,
+                   :gravity => :face, :crop => :fill
+                 },
+                 :overlay => "y0",
+                 :width => 80, :crop => :scale,
+                 :gravity => :south_east, :x => 5, :y => 5,
+                 :html_width => 300, :html_height => 200) %>
 <table>
   <thead>
     <tr>
@@ -10,7 +17,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @articles.each do |article| %>
       <tr>
@@ -23,7 +29,5 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Article', new_article_path %>

@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
-
 <p>
   <strong>Body:</strong>
   <%= @article.body %>
 </p>
-
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+<div class="container">
+  <div class="row">
+    <div class="col offset-col">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3), url('<%= cl_image_path @article.photo.key, height: 300, width: 400, crop: :fill%>')">
+            Cool Article
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
